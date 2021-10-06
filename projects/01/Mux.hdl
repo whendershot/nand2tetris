@@ -15,4 +15,13 @@ CHIP Mux {
 
     PARTS:
     // Put your code here:
+    // Using: out = a(sel') + b(sel)
+    // This ingnores + ab but if ab, then out will be true either way and this will save several nand gates
+    // Longer SoP: out = a(sel') + b(sel) + ab
+    Not(in = sel, out = notsel);
+    
+    And(a = a, b = notsel, out = x1);
+    And(a = b, b = sel, out = x2);
+    
+    Or(a = x1, b = x2, out = out);
 }
