@@ -18,7 +18,7 @@ CHIP RAM16K {
     // Put your code here:
     DMux4Way(
         in = load,
-        sel = address[12..13], 
+        sel = address[12..14], 
         a = address0, 
         b = address1,
         c = address2,
@@ -35,7 +35,7 @@ CHIP RAM16K {
         b = out1,
         c = out2,
         d = out3,
-        sel = address[12..13],
+        sel = address[12..14],
         out = out
     );
 }
