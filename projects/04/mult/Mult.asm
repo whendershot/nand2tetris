@@ -10,3 +10,27 @@
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+
+//Add R0 to sum R1 times and write to R2
+//We have only two working registers
+    @sum
+    M=0
+(LOOP)
+    @R1
+    MD=M-1
+    @END
+    D; JLT
+    @R0
+    D=M
+    @sum
+    M=M+D
+    @LOOP
+    0; JMP
+(END)
+    @sum
+    D=M
+    @R2
+    M=D
+(ENDLOOP)
+    @ENDLOOP
+    0; JMP
